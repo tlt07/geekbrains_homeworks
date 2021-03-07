@@ -56,6 +56,6 @@ default:
     print("Из массива", array, "только ", arrayWithFalse.count, " чисел не деляться на 3 ",arrayWithFalse)
 }
 
-
+// комменты добавлен
 
 
