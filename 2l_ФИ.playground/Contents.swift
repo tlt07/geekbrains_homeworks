@@ -56,6 +56,38 @@ default:
     print("Из массива", array, "только ", arrayWithFalse.count, " чисел не деляться на 3 ",arrayWithFalse)
 }
 
+// ЗАДАНИЕ 3. Создать возрастающий массив из 100 чисел.
+var arrayNew: [Int] = []
 
+for i in 1...100 {
+    arrayNew.append(i)
+}
+print(arrayNew)
+
+// ЗАДАНИЕ 4. Удалить из этого массива все четные числа и все числа, которые не делятся на 3.
+var i = arrayNew.count - 1
+var ii = (arrayNew[98] % 3)
+while i != 0 {
+    if (arrayNew[i] % 2) == 0 || ((arrayNew[i] % 3) == 0) {
+        arrayNew.remove(at: i)
+    }
+    i -= 1
+}
+print(arrayNew)
+
+// ЗАДАНИЕ 5.Написать функцию, которая добавляет в массив новое число Фибоначчи, и добавить при помощи нее 50 элементов. Числа Фибоначчи определяются соотношениями Fn=Fn-1 + Fn-2.
+var f0 = 0
+var f1 = 1
+func fibonacci (_ f0: inout Int, _ f1: inout Int) -> Int {
+    let result = f0 + f1
+    f0 = f1
+    f1 = result
+    return result
+}
+
+for _ in 1...50 {
+    arrayNew.append(fibonacci(&f0, &f1))
+}
+print(arrayNew)
 
 
