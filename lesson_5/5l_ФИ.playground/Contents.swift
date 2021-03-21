@@ -20,7 +20,7 @@ enum TruckBodyState { case isOpen, isClose}
 enum SomeActions { case setTruckBodyState, setDrivingMode }
 
 
-protocol Car: AnyObject {
+protocol Car: CustomStringConvertible, AnyObject {
     var color: UIColor { get set }
     var engineState: Bool { get set }
     var mileage: Int { get }
@@ -70,6 +70,12 @@ class Sedan: Car {
     }
 }
 
+extension Sedan: CustomStringConvertible {
+     var description: String {
+         return " Цвет машины: \(color)\n Двигатели машины в сосотоянии: \(engineState)\n Окна машины: \(windowState)\n Пробег: \(mileage)"
+     }
+ }
+
 var VW = Sedan(color: .black, engineState: false, mileage: 0, windowState: .close, drivingMode: .comfort)
 
 VW.setDrivingMode(drivingMode: .sport)
@@ -108,5 +114,12 @@ class Truck: Car {
     
 }
 
+extension Truck: CustomStringConvertible {
+     var description: String {
+        return "Цвет машины: \(color)\n Двигатели машины в сосотоянии: \(engineState)\n Окна машины: \(windowState)\n Пробег: \(mileage)"
+     }
+ }
+
 var ford = Truck(color: .darkGray, engineState: false, mileage: 1, windowState: .close)
 ford.CostRecolor()
+print(VW)
