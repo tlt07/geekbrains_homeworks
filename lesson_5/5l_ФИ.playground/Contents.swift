@@ -123,3 +123,6 @@ extension Truck: CustomStringConvertible {
 var ford = Truck(color: .darkGray, engineState: false, mileage: 1, windowState: .close)
 ford.CostRecolor()
 print(VW)
+
+
+
